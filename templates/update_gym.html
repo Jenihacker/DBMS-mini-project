@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="add_gym">
+        <div class="add_gym_form">
+            <h1>UPDATE GYM</h1>
+            <form action="{{ url_for('update_gym_data' ) }}" onsubmit="return validate()" method="POST">
+                <div class="add-gym-items">
+                    <label for="gym-id">GYM ID</label>
+                    <input type="text" id="gym-id" name="gym-id" value="{{data['Gym_ID']}}" required autocomplete="none">
+                </div>
+                <div class="add-gym-items">
+                    <label for="gym-name">GYM NAME</label>
+                    <input type="text" id="gym-name" name="gym-name" value="{{data['Gym_Name']}}" required autocomplete="none">
+                </div>
+                <div class="add-gym-items">
+                    <label for="gym-address">GYM ADDRESS</label>
+                    <textarea type="text" id="gym-address" name="gym-address" required autocomplete="none">{{data['Address']}}</textarea>
+                </div>
+                <div class="add-gym-items">
+                    <label for="gym-type">GYM TYPE</label>
+                    <select name="gym-type" id="gym-type">
+                        <option value="{{data['Type']}}"  selected hidden>{{data['Type']}}</option>
+                        <option value="UNISEX">UNISEX</option>
+                        <option value="MEN">MEN</option>
+                        <option value="WOMEN">WOMEN</option>
+                    </select>
+                </div>
+                <button type="submit" class="add-gym-btn">UPDATE</button>
+            </form>
+            {% if flag == True %}
+                <div style="color: #155724; background-color: #c3e6cb; margin-top: 2%; border-radius: 5px; padding: 4px 4px 4px 10px; font-weight: bold;">{{msg}}</div>
+            {% elif flag == False %}
+            <div style="color: #856404; background-color: #ffeeba; margin-top: 2%; border-radius: 5px; padding: 4px 4px 4px 10px; font-weight: bold;">{{msg}}</div>
+            {% else %}
+            {% endif %}           
+        </div>
+    </div>
+{% endblock %}

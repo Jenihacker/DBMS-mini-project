@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="view_gym">
+    <div class="view_gym_det">
+        {% if len != 0: %}
+        <h1>Trainer Details</h1>
+        <table>
+            <tr>
+                {% for item in data[0].keys(): %}
+                <th>{{item}}</th>
+                {% endfor %}
+            </tr>
+            {% for i in data: %}
+                <tr>
+                    {% for item in i.values() %}
+                        <td>{{item}}</td>
+                    {% endfor %}
+                </tr>   
+            {% endfor %}
+        </table>
+        {% else %}
+        <h1>Nothing to display!</h1>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

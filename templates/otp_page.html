@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static',filename='forgot_password.css' ) }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='assets/favicon.ico')}}" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/9e9b29a8b1.js" crossorigin="anonymous"></script>
+    <title>Fit 2 Thrill</title>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <div class="logo" style="margin-left: 50px;">
+            <img src="https://raw.githubusercontent.com/Gedipey/image/main/cover%20(1).png" alt="logo" width="200px" class="items" style="">
+            </div>
+            <h1 class="items" style="text-align: center;">OTP Verification</h1>
+            {% if err %}
+                <div style="text-align: center; color: red; margin-top: 5px;">{{err}}</div>
+            {% else %}
+                <p style="text-align: center; color: red;">An email has been {{val}}sent to {{msg}} <br>Please enter the OTP to reset the password</p>
+            {% endif %}
+            
+            <form action="{{ url_for('otp_verification' ) }}" method="POST">
+                <div class="otp-elems">
+                <ul>
+                    <li><input type="text" name="otp1" id="otp1"></li>
+                    <li><input type="text" name="otp2" id="otp2"></li>
+                    <li><input type="text" name="otp3" id="otp3"></li>
+                    <li><input type="text" name="otp4" id="otp4"></li>
+                </ul>
+                </div>
+                <div class="btn">
+                    <button type="submit">Submit</button>
+                </div>
+                <div class="add-user">
+                    <a href="{{ url_for('otp_resend' ) }}" style="text-align: center;">Resend OTP</a>
+                </div>
+                <div class="add-user">
+                <a href="{{ url_for('login' ) }}" style="text-align: center;">Go to Login Page</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

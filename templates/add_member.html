@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="add_gym">
+        <div class="add_gym_form">
+            <h1>ADD MEMBER</h1>
+            <form action="{{ url_for('add_member' ) }}" onsubmit="return checkamt()" method="POST">
+                <div class="add-gym-items">
+                    <label for="member-id">MEMBER ID</label>
+                    <input type="text" id="member-id" name="member-id" placeholder="Enter Member ID" required>
+                </div>
+                <div class="add-gym-items">
+                    <label for="gym-name">MEMBER NAME</label>
+                    <input type="text" id="member-name" name="member-name" placeholder="Enter Member Name" required>
+                </div>
+                <div class="add-gym-items">
+                    <label for="gym-address">DATE OF BIRTH</label>
+                    <input type="date" id="date-of-birth" name="date-of-birth" placeholder="Enter Date Of Birth" required>
+                </div>
+                <div class="add-gym-items">
+                    <label for="age">AGE</label>
+                    <input type="number" id="age" name="age" placeholder="Enter Age" required>
+                </div>
+                <div class="add-gym-items">
+                    <label for="package">PACKAGE</label>
+                    <input type="text" id="package" name="package" placeholder="Enter Package" required>
+                </div>
+                <div class="add-gym-items">
+                    <label for="mobno">MOBILE NO</label>
+                    <input type="text" id="mobno" name="mobno" placeholder="Enter Mobile Number" required>
+                </div>
+                <div class="add-gym-items">
+                    <label for="pay-id">PAYMENT ID</label>  
+                    <select name="pay-id" id="pay-id">
+                        <option value="" disabled selected hidden>Select an option</option>
+                            {% for i in pid %}
+                            <option value="{{i['Pay_ID']}}">{{i['Pay_ID']}}</option>    
+                            {% endfor %}
+                    </select>
+                </div>
+                <div class="add-gym-items">
+                    <label for="trainer-id">TRAINER ID</label>
+                    <select name="trainer-id" id="trainer-id">
+                        <option value="" disabled selected hidden>Select an option</option>
+                            {% for i in tid %}
+                            <option value="{{i['Trainer_ID']}}">{{i['Trainer_ID']}}</option>    
+                            {% endfor %}
+                    </select>
+                </div>
+                <button type="submit" class="add-gym-btn">ADD</button>
+            </form>
+            {% if flag == True %}
+                <div style="color: #155724; background-color: #c3e6cb; margin-top: 2%; border-radius: 5px; padding: 4px 4px 4px 10px; font-weight: bold;">{{msg}}</div>
+            {% elif flag == False %}
+            <div style="color: #856404; background-color: #ffeeba; margin-top: 2%; border-radius: 5px; padding: 4px 4px 4px 10px; font-weight: bold;">{{msg}}</div>
+            {% else %}
+            {% endif %}  
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static',filename='forgot_password.css' ) }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='assets/favicon.ico')}}" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/9e9b29a8b1.js" crossorigin="anonymous"></script>
+    <title>Fit 2 Thrill</title>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <div class="logo">
+            <img src="https://raw.githubusercontent.com/Gedipey/image/main/cover%20(1).png" alt="logo" width="200px" style="margin-left: 3rem;">
+            </div>
+            <h1 class="items" style="text-align: center;">Password Changed Successfully</h1>
+                <div class="add-user">
+                <a href="{{ url_for('login' ) }}" style="text-align: center;">Go to Login Page</a>
+                </div>
+        </div>
+    </div>
+</body>
+</html>

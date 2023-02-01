@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="add_gym">
+        <div class="add_gym_form">
+            <h1>UPDATE PAYMENT</h1>
+            <form action="{{ url_for('update_payment_data' ) }}" onsubmit="return checknum1()" method="POST">
+                <div class="add-gym-items">
+                    <label for="payment-id">PAYMENT ID</label>
+                    <input type="text" id="payment-id" name="payment-id" value="{{data['Pay_ID']}}" required>
+                </div>
+                <div class="add-gym-items">
+                    <label for="pay-amt">AMOUNT</label>
+                    <input type="text" id="pay-amt" name="pay-amt" value="{{data['amount']}}" required>
+                </div>
+                <div class="add-gym-items">
+                    <label for="gym-id">GYM ID</label>
+                    <select name="gym-id" id="gym-id">
+                            <option value="{{data['Gym_ID']}}" selected hidden>{{data['Gym_ID']}}</option>
+                            {% for i in gid %}
+                            <option value="{{i['Gym_ID']}}">{{i['Gym_ID']}}</option>    
+                            {% endfor %}
+                    </select>
+                </div>
+                <button type="submit" class="add-gym-btn">UPDATE</button>
+            </form>
+            {% if flag == True %}
+                <div style="color: #155724; background-color: #c3e6cb; margin-top: 2%; border-radius: 5px; padding: 4px 4px 4px 10px; font-weight: bold;">{{msg}}</div>
+            {% elif flag == False %}
+            <div style="color: #856404; background-color: #ffeeba; margin-top: 2%; border-radius: 5px; padding: 4px 4px 4px 10px; font-weight: bold;">{{msg}}</div>
+            {% else %}
+            {% endif %} 
+        </div>
+    </div>
+{% endblock %}

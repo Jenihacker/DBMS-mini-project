@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="add_gym">
+        <div class="add_gym_form">
+            <h1>UPDATE TRAINER</h1>
+            <form action="{{ url_for('update_trainer_data' ) }}" method="POST">
+                <div class="add-gym-items">
+                    <label for="trainer-id">TRAINER ID</label>
+                    <input type="text" id="trainer-id" name="trainer-id" value="{{data['Trainer_ID']}}" required>
+                </div>
+                <div class="add-gym-items">
+                    <label for="gym-name">TRAINER NAME</label>
+                    <input type="text" id="trainer-name" name="trainer-name" value="{{data['Name']}}" required>
+                </div>
+                <div class="add-gym-items">
+                    <label for="time">TIME</label>
+                    <input type="time" id="time" name="time" value="{{data['Time']}}" required>
+                </div>
+                <div class="add-gym-items">
+                    <label for="mobile-number">MOBILE NUMBER</label>
+                    <input type="text" id="mobile-number" name="mobile-number" value="{{data['Mobile_No']}}" required>
+                </div>
+                <div class="add-gym-items">
+                    <label for="payment-id">PAYMENT ID</label>
+                    <select name="payment-id" id="payment-id">
+                        <option value="{{data['Pay_ID']}}" selected hidden>{{data['Pay_ID']}}</option>
+                        {% for i in pid %}
+                        <option value="{{i['Pay_ID']}}">{{i['Pay_ID']}}</option>    
+                        {% endfor %}
+                    </select>
+                </div>
+                <button type="submit" class="add-gym-btn">UPDATE</button>
+            </form>
+            {% if flag == True %}
+                <div style="color: #155724; background-color: #c3e6cb; margin-top: 2%; border-radius: 5px; padding: 5px;">{{msg}}</div>
+            {% elif flag == False %}
+            <div style="color: #856404; background-color: #ffeeba; margin-top: 2%; border-radius: 5px; padding: 5px;">{{msg}}</div>
+            {% else %}
+            {% endif %}  
+        </div>
+    </div>
+{% endblock %}

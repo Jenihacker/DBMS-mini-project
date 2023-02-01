@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static',filename='login.css' ) }}">
+    <link rel="stylesheet" href="../static/login.css">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='assets/favicon.ico')}}" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/9e9b29a8b1.js" crossorigin="anonymous"></script>
+    <title>Fit 2 Thrill</title>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <div class="logo">
+            <img src="https://raw.githubusercontent.com/Gedipey/image/main/cover%20(1).png" alt="logo" width="200px" class="items" style="margin-left: 3rem;">
+            </div>
+            <h1 class="items" style="text-align: center; color: rgb(102, 0, 255);">Verify Yourself</h1>
+            <div style="text-align: center; color: red;">{{msg}}</div>
+            <form action="{{ url_for('new_user' ) }}" method="POST">
+                <div class="items">
+                    <label for="usname">Username</label>
+                    <div class="icons">
+                    <i class="fa-solid fa-user"></i>
+                    <input type="text" name="usname" id="usname" placeholder="Enter the Username" required>
+                    </div>
+                </div>
+                <div class="items">
+                    <label for="psword">Password</label>
+                    <div class="icons">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" name="psword" id="psword" placeholder="Enter the Password" required>
+                    </div>
+                </div>
+                <div class="btn">
+                    <button type="submit">Verify</button>
+                </div>
+                <div style="text-align: center;margin-top: 5px;">
+                    <a href="{{ url_for('index' ) }}">Go to Login Page</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

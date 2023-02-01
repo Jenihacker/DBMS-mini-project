@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="add_gym">
+        <div class="add_gym_form">
+            <h1>ADD GYM</h1>
+            <form action="{{ url_for('add_gym_data' ) }}" onsubmit="return validate()" method="POST">
+                <div class="add-gym-items">
+                    <label for="gym-id">GYM ID</label>
+                    <input type="text" id="gym-id" name="gym-id" placeholder="Enter Gym ID" required autocomplete="none">
+                </div>
+                <div class="add-gym-items">
+                    <label for="gym-name">GYM NAME</label>
+                    <input type="text" id="gym-name" name="gym-name" placeholder="Enter Gym Name" required autocomplete="none">
+                </div>
+                <div class="add-gym-items">
+                    <label for="gym-address">GYM ADDRESS</label>
+                    <textarea type="text" id="gym-address" name="gym-address" placeholder="Enter Gym Address" required autocomplete="none"></textarea>
+                </div>
+                <div class="add-gym-items">
+                    <label for="gym-type">GYM TYPE</label>
+                    <select name="gym-type" id="gym-type">
+                        <option value="UNISEX">UNISEX</option>
+                        <option value="MEN">MEN</option>
+                        <option value="WOMEN">WOMEN</option>
+                    </select>
+                </div>
+                <button type="submit" class="add-gym-btn">ADD</button>
+            </form>
+            {% if flag == True %}
+                <div style="color: #155724; background-color: #c3e6cb; margin-top: 2%; border-radius: 5px; padding: 4px 4px 4px 10px; font-weight: bold;">{{msg}}</div>
+            {% elif flag == False %}
+            <div style="color: #856404; background-color: #ffeeba; margin-top: 2%; border-radius: 5px; padding: 4px 4px 4px 10px; font-weight: bold;">{{msg}}</div>
+            {% else %}
+            {% endif %}           
+        </div>
+    </div>
+{% endblock %}
