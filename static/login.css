@@ -63,7 +63,8 @@ body {
 
 body {
     /*background-image: linear-gradient(to bottom,#5433ff,#20bdff);*/
-    background-image: url("https://images.pexels.com/photos/1552252/pexels-photo-1552252.jpeg?cs=srgb&dl=pexels-leon-ardho-1552252.jpg&fm=jpg");
+    /*background-image: url("https://images.pexels.com/photos/1552252/pexels-photo-1552252.jpeg?cs=srgb&dl=pexels-leon-ardho-1552252.jpg&fm=jpg");*/
+    background-image: url("pexels-leon-ardho-1552252.jpg");
     background-size: cover;
 }
 

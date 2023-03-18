@@ -3,7 +3,7 @@
     <div class="add_gym">
         <div class="add_gym_form">
             <h1>ADD TRAINER</h1>
-            <form action="{{ url_for('add_trainer' ) }}" method="POST">
+            <form action="{{ url_for('add_trainer' ) }}" method="POST" onsubmit="return checkopts()">
                 <div class="add-gym-items">
                     <label for="trainer-id">TRAINER ID</label>
                     <input type="text" id="trainer-id" name="trainer-id" placeholder="Enter Trainer ID" required>

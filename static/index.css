@@ -11,7 +11,7 @@
 
 body {
   background-color: #fff;
-  background-image: url("https://images.pexels.com/photos/1552252/pexels-photo-1552252.jpeg?cs=srgb&dl=pexels-leon-ardho-1552252.jpg&fm=jpg");
+  background-image: url("pexels-leon-ardho-1552252.jpg");
   background-size: cover;
 }
 
@@ -279,7 +279,6 @@ nav ul li {
 .add-gym-items {
     margin:1.35vh 0;
     display: flex;
-    
 }
 
 .add-gym-items label {
@@ -352,7 +351,7 @@ nav ul li {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 15vh;
+    margin-top: 7vh;
     text-align: center;
 }
 
